@@ -43,7 +43,8 @@ $(document).ready(()=>{
         
         $(".numbers").append('<i class="fas fa-angle-left"></i>');
         for(i=0;i<len;i++){
-            $(".numbers").append("<div>"+(i+1)+"</div>");
+            if(i==0)  $(".numbers").append('<div class="active">'+(i+1)+'</div>');
+            else  $(".numbers").append("<div>"+(i+1)+"</div>");
         };
         $(".numbers").append('<i class="fas fa-angle-right"></i>');
         $(".numbers div").click(function(){
@@ -63,7 +64,6 @@ $(document).ready(()=>{
             else if(x<0) x= len-1;
             start();
         });
-        $(".numbers div:first-child").addClass("active");
         function changeText(obj ,x){
             $(".text h1").text(obj.slider[x].text.h1);
             $(".text p").text(obj.slider[x].text.p); 
